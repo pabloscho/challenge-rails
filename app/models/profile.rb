@@ -4,4 +4,6 @@ class Profile < ApplicationRecord
   validates :superuser, presence: false
   validates :username, presence: true, uniqueness: true
   validates_format_of :username, with: USERNAME_REGEXP
+
+  has_many :repositories
 end
