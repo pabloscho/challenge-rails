@@ -1,0 +1,22 @@
+<% if @reports.present? %>
+<table class="pure-table">
+ <thead>
+  <tr>
+    <th>username</th>
+    <th>repositories</th>
+    <th>tags</th>
+  </tr>
+  </thead>
+    <tbody>
+    <% @reports.each do |report| %>
+    <tr>
+      <td><%= report.username %></td>
+      <td><%= report.repositories.pluck(:name).join(", ") %></td>
+      <td><%= report.repositories.map(&:tags).join.split(",").uniq.join(", ") %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+    <p>No reports found.</p>
+<% end %>
