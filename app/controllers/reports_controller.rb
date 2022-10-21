@@ -16,6 +16,6 @@ class ReportsController < ApplicationController
   private
 
   def containg_tags?
-    params[:tags].present?
+    params[:tag].present?
   end
 end
