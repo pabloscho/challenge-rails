@@ -1,0 +1,11 @@
+<h1>Profiles#new</h1>
+<p><% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %></p>
+
+<%= form_with url:'/profiles/create', method: :post do |form| %>
+    <%= form.label :username, "Username" %>
+    <%= form.text_field :username %>
+    <br /><br />
+    <%= form.submit "Submit" %>
+<% end %>
