@@ -6,7 +6,7 @@ class ViewCount < ApplicationRecord
     @total = view_count.views
   end
 
-  def self.total
-    @total
+  class << self
+    attr_reader :total
   end
 end
